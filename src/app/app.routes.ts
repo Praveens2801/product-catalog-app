@@ -9,6 +9,6 @@ export const routes: Routes = [
     },
     {
         path: 'home',
-        loadChildren: () => import('./app-home/app-home.module').then((module) => module.AppHomeModule)
+        loadChildren: () => import('../app-home/app-home.module').then((module) => module.AppHomeModule)
     }
 ];
