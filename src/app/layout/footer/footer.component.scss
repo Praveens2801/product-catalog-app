@@ -1,0 +1,87 @@
+@import '../../../assets/variables.scss';
+
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  height: auto;
+  line-height: 1.5;
+  flex-wrap: wrap;
+
+  .happy-message {
+    font-size: 20px;
+    flex: 1 1 100%;
+    margin: 1rem 0;
+    text-align: center;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: underline;
+    }
+
+    @media(min-width: 768px) {
+      flex: 1;
+      text-align: left;
+    }
+  }
+
+  .meet-us,
+  .chat-to-us {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media(min-width: 768px) {
+      align-items: center;
+      flex-direction: row;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+
+      @media(min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .meet-us-content,
+  .chat {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+  }
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .happy-message {
+      margin: 1rem 0;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar-brand a {
+    padding: 15px 25px;
+    font-size: 1.2em;
+    /* increase font size on smaller screens */
+  }
+}
