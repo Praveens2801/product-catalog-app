@@ -1,0 +1,35 @@
+<div class="products-area">
+    <div class="search-container">
+        <input type="text" id="search" [(ngModel)]="searchTerm" class="search-box" placeholder="Search..." (input)="searchProduct(searchTerm)">
+        <button class="filter-button" mat-icon-button aria-label="Filter">
+            <mat-icon>search</mat-icon>
+        </button>
+    </div>
+    <div class="products">
+        <div class="product-header-label"> <label class="products-label">Products</label>
+        </div>
+        <div class="products-list">
+          
+                <ul class="common-ul-li">
+                    @for(product of filteredProductsData; track product) {
+                    <li>
+                        <div class="card">
+                            <div class="card-image">
+                                <img [src]="product.imgUrl" alt="Product Image">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">{{product.name}}</h3>
+                                <!-- <p class="card-description">{{product.description}}</p> -->
+                                <p class="card-price">${{product.price}}</p>
+                                <button class="card-button">Add to Cart</button>
+                            </div>
+                        </div>
+                    </li>
+                } @empty {
+                    <img src="../../../../assets/images/not-found.png">
+                }
+                </ul>
+            
+        </div>
+    </div>
+</div>
