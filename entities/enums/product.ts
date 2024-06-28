@@ -1,9 +1,17 @@
-export enum IProductCategory {
-    Electronics = 1,
+export enum ProductCategory {
+    Electronics,
+    Fashion,
     Footwear
 }
 
-export enum IProductType {
-    Electronics = 1,
-    Footwear
+export enum ProductType {
+    Mobile,
+    Watch,
+    Laptop,
+    Shoes
+}
+
+export enum PriceSortOrder {
+    ['From Higher'],
+    ['From Lower']
 }

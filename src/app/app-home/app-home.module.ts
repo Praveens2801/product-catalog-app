@@ -6,7 +6,8 @@ import { AppHomeRoutingModule } from './app-home-routing';
 import { MatIconModule } from '@angular/material/icon';
 import { ProductServiceService } from '../../../services/product-service.service';
 import { FormsModule } from '@angular/forms';
-
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 
@@ -14,12 +15,15 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     ProductAreaComponent,
     AboutAreaComponent
+    
   ],
   imports: [
     CommonModule,
     AppHomeRoutingModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    MatMenuModule
   ],
   providers: [ProductServiceService]
 })

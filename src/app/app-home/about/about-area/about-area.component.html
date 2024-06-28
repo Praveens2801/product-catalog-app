@@ -1,1 +1,27 @@
-<p>about-area works!</p>
+<div class="product-details">
+    <div class="grid-container">
+        <div class="left-column">
+            <img [src]="selectedProduct?.imgUrl" alt="">
+        </div>
+        <div class="right-column">
+            <div class="product-description-content">
+                <div class="product-description">
+                    <h1>{{selectedProduct.name}}</h1>
+                    <p>{{selectedProduct.title}}</p>
+                    <div class="">
+                        <p>{{selectedProduct.description}}</p>
+                    </div>
+                </div>
+
+                <div class="product-price">
+                    <label for=""><span>$</span>{{selectedProduct.price}}</label>
+                </div>
+            </div>
+
+            <div class="action-button">
+                <a class="cart-btn" (click)="addToCart()">Add to cart</a>
+                <a class="cart-btn-cancel" (click)="goToProducts()">Back</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,14 +1,35 @@
 <nav class="navbar">
   <div class="navbar-container">
     <div class="navbar-brand">
-      <a (click)="navigate('home/products')">Product Catalog App</a>
+      <a (click)="navigate('home/products')"><i class="material-icons">shopping_cart</i>My Shop</a>
     </div>
     <ul class="navbar-nav">
-      <li class="nav-item"><a (click)="navigate('home/products')" routerLinkActive="active">Product Catalog</a></li>
-      <li class="nav-item"><a (click)="navigate('home/about')" routerLinkActive="active">About</a></li>
+      <li class="nav-user-name"><a>Hi, Praveen</a></li>
+      <li class="nav-item"><a><i class="material-icons">shopping_cart</i></a></li>
     </ul>
   </div>
 </nav>
 <div>
   <router-outlet></router-outlet>
+</div>
+<div class="footer">
+  <div>
+    <mat-icon>pin_drop</mat-icon><label for="">Meet us:</label>
+    <div class="meet-us-content">
+      <span>
+        896 Harter Street
+        Dayton, OH 45407.
+      </span>
+    </div>
+  </div>
+  <div class="happy-message">
+    <span><mat-icon>sentiment_very_satisfied</mat-icon>Delight in your shopping journey with us!</span>
+  </div>
+
+  <div class="chart-to-us">
+    <label for="">Chart to us:</label>
+    <div class="chat">
+      <mat-icon>message</mat-icon><span>Our friendly team is here to help.</span>
+    </div>
+  </div>
 </div>

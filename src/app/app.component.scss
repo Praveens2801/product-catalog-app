@@ -15,15 +15,15 @@
       a {
         font-weight: bold;
         text-decoration: none;
-        color: $text-navbar-color;
-        font-size: 1.5rem;
+        color: $text-color;
+        font-size: 1rem;
         padding: 0.5rem 1rem;
         border-radius: 5px;
         transition: background-color 0.3s, color 0.3s;
 
         &:hover {
           cursor: pointer;
-          background-color: $text-navbar-color;
+          background-color: $text-color;
           color: $background-color;
         }
       }
@@ -35,30 +35,117 @@
       margin: 0;
       padding: 0;
 
-      .nav-item {
-        margin-left: 1rem;
-        cursor: pointer;
+      .nav-user-name {
+        padding: 9px;
 
         a {
-          text-decoration: none;
-          color: $text-navbar-color;
-          font-size: 1rem;
-          padding: 0.5rem 1rem;
-          border-radius: 5px;
-          transition: background-color 0.3s, color 0.3s;
-          border-style: groove;
-          
-          &:hover {
-            background-color: $hover-color;
-            color: white;
-          }
-
-          &.active {
-            background-color: $active-color;
-            color: white;
-          }
+          color: $text-color;
+          font-size: 15px;
+          text-decoration: underline;
         }
       }
+
+      .nav-item {
+        cursor: pointer;
+        border: 1px solid $text-color;
+        padding: 5px;
+        border-radius: 5px;
+
+        &:hover {
+          background-color: $text-color;
+          color: $background-color;
+
+          a {
+            color: $background-color;
+          }
+        }
+
+        a {
+          color: $text-color;
+          font-size: 11px;
+          padding: 15px;
+          border-radius: 5px;
+          transition: background-color 0.3s, color 0.3s;
+          align-items: center;
+          display: contents;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: black;
+  color: white;
+  height: auto;
+  line-height: 1.5;
+  flex-wrap: wrap;
+
+  .happy-message {
+    font-size: 20px;
+    flex: 1 1 100%;
+    margin: 1rem 0;
+    text-align: center;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: underline;
+    }
+
+    @media(min-width: 768px) {
+      flex: 1;
+      text-align: left;
+    }
+  }
+
+  .meet-us,
+  .chat-to-us {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media(min-width: 768px) {
+      align-items: center;
+      flex-direction: row;
+    }
+
+    label {
+      margin-bottom: 0.5rem;
+
+      @media(min-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+
+    mat-icon {
+      margin-right: 0.5rem;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .meet-us-content,
+  .chat {
+    display: flex;
+    align-items: center;
+    padding: 18px 0;
+  }
+
+  @media(max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .happy-message {
+      margin: 1rem 0;
     }
   }
 }

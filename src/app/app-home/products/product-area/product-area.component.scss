@@ -9,22 +9,6 @@
         grid-template-columns: 1fr auto;
         gap: 10px;
         align-items: center;
-
-        @media (max-width: 600px) {
-            grid-template-columns: 1fr;
-            gap: 5px;
-            text-align: center;
-
-            .products-label,
-            .search-box,
-            .filter-button {
-                width: 100%;
-                padding: 5px;
-                color: $text-navbar-color;
-                background: $background-color;
-                border: $background-color;
-            }
-        }
     }
 
     .products-label {
@@ -46,24 +30,107 @@
     .filter-button {
         padding: 6px;
         font-size: 1em;
-        border: none;
         border-radius: 5px;
         background-color: $background-color;
-        color: white;
+        border: 1px solid $background-color;
+        color: $text-color;
         cursor: pointer;
         transition: background-color 0.3s ease;
+
+        mat-icon {
+            height: 20px;
+        }
+
+        &:hover {
+            background-color: $text-color;
+            color: $background-color;
+            border: 1px solid $background-color;
+        }
     }
 
     .products {
-        .product-header-label {
+        .product-header {
             padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .products-label {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+
+                @media (min-width: 600px) {
+                    margin-bottom: 0;
+                }
+            }
+
+            .filter-options {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                align-items: center;
+
+                select {
+                    padding: 8px;
+                    cursor: pointer;
+                    margin: 0 10px 10px 0;
+                    width: 100%;
+
+                    @media (min-width: 600px) {
+                        width: auto;
+                    }
+                }
+
+                span {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 10px;
+
+                    @media (min-width: 600px) {
+                        margin-bottom: 0;
+                    }
+                }
+
+                span button {
+                    color: $text-color;
+                    background: $background-color;
+                    border-radius: 5px;
+                    margin-left: 10px;
+                }
+            }
+        }
+
+        @media (max-width: 600px) {
+            .product-header {
+                flex-direction: column;
+
+                .filter-options {
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    select,
+                    span {
+                        width: 100%;
+                    }
+
+                    span {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+
+                        button {
+                            width: 100%;
+                            text-align: left;
+                        }
+                    }
+                }
+            }
         }
 
         .products-list {
-
-            // display: flex;
-            // flex-wrap: wrap;
-            // padding: 20px;
             .common-ul-li {
                 padding: 8px 16px;
 
@@ -71,8 +138,23 @@
                     display: inline-block;
                     width: 20%;
 
+                    @media(max-width: 600px) {
+                        width: 100%;
+                    }
+
+                    @media(min-width: 601px) and (max-width: 1400px) {
+                        width: 50%;
+                    }
+
+                    @media(min-width: 1401px) {
+                        width: 25%;
+                    }
+
                     .card {
-                        border: 1px solid #ddd;
+                        height: auto;
+                        max-height: 70vh;
+                        cursor: pointer;
+                        border: 1px solid $text-color;
                         border-radius: 8px;
                         overflow: hidden;
                         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -84,7 +166,7 @@
                             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
                         }
 
-                        &-image {
+                        .card-image {
                             width: 100%;
 
                             img {
@@ -94,70 +176,71 @@
                             }
                         }
 
-                        &-content {
+                        .card-content {
                             padding: 16px;
 
-                            &-title {
+                            .card-title {
                                 font-size: 1.25em;
                                 margin: 0 0 8px;
                             }
 
-                            &-description {
+                            .card-description {
                                 font-size: 1em;
-                                color: #666;
+                                color: $secondary-color;
                                 margin: 0 0 16px;
                             }
 
-                            &-button {
-                                display: inline-block;
-                                padding: 10px 20px;
-                                font-size: 1em;
-                                color: #fff;
-                                background-color: #007bff;
-                                border: none;
-                                border-radius: 4px;
-                                cursor: pointer;
-                                text-align: center;
-                                text-decoration: none;
-                                transition: background-color 0.2s;
+                            .card-price {
+                                font-size: 1.2em;
+                                margin: 0 0 16px;
+                            }
 
-                                &:hover {
-                                    background-color: #0056b3;
+                            .card-footer {
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+
+                                mat-icon {
+                                    cursor: pointer;
                                 }
                             }
                         }
 
                         .card-button {
                             padding: 5px;
-                            color: $text-navbar-color;
+                            color: $text-color;
                             background: $background-color;
                             border: $background-color;
+                            cursor: pointer;
                         }
                     }
                 }
             }
+        }
+    }
 
+    .not-found-footer {
+        display: block;
 
-            // @media (max-width: 600px) {
-            //     .card {
-            //         &-content {
-            //             padding: 12px;
+        .not-found {
+            margin: auto;
+            width: 50%;
+            display: flex;
+            justify-content: center;
 
-            //             &-title {
-            //                 font-size: 1.1em;
-            //             }
+            img {
+                width: 50%;
+            }
+        }
 
-            //             &-description {
-            //                 font-size: 0.9em;
-            //             }
+        .go-back {
+            text-align: center;
 
-            //             &-button {
-            //                 font-size: 0.9em;
-            //                 padding: 8px 16px;
-            //             }
-            //         }
-            //     }
-            // }
+            a {
+                text-decoration-line: underline;
+                font-size: 20px;
+                cursor: pointer;
+            }
         }
     }
 }

@@ -1,35 +1,66 @@
 <div class="products-area">
     <div class="search-container">
-        <input type="text" id="search" [(ngModel)]="searchTerm" class="search-box" placeholder="Search..." (input)="searchProduct(searchTerm)">
-        <button class="filter-button" mat-icon-button aria-label="Filter">
+        <input type="text" id="search" [(ngModel)]="searchTerm" class="search-box" placeholder="Search...">
+        <button [disabled]="searchTerm ? false : true" class="filter-button" mat-icon-button aria-label="Filter"
+            (click)="searchProduct(searchTerm)">
             <mat-icon>search</mat-icon>
         </button>
     </div>
+    @if (filteredProductsData.length > 0) {
     <div class="products">
-        <div class="product-header-label"> <label class="products-label">Products</label>
+        <div class="product-header">
+            <label class="products-label">Products</label>
+            <div class="filter-options">
+                <select [(ngModel)]="selectedCategory" (change)="filterProducts()">
+                    <option disabled value="">Filter Category</option>
+                    <option value="All">All</option>
+                    @for(category of categories; track category) {
+                    <option [value]="category.key">{{category.value}}</option>
+                    }
+                </select>
+                <span>
+                    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>sort</mat-icon></button>
+                    <mat-menu #menu="matMenu">
+                        <button (click)="sortProducts(priceSortOrder['From Lower'])" mat-menu-item>Price low to
+                            high</button>
+                        <button (click)="sortProducts(priceSortOrder['From Higher'])" mat-menu-item>Price high to
+                            low</button>
+                    </mat-menu>
+                </span>
+            </div>
         </div>
         <div class="products-list">
-          
-                <ul class="common-ul-li">
-                    @for(product of filteredProductsData; track product) {
-                    <li>
-                        <div class="card">
-                            <div class="card-image">
-                                <img [src]="product.imgUrl" alt="Product Image">
+
+            <ul class="common-ul-li">
+                @for(product of filteredProductsData; track product) {
+                <li>
+                    <div class="card">
+                        <div class="card-image" (click)="navigate('home/about', product.productId)">
+                            <img [src]="product.imgUrl" alt="Product Image">
+                        </div>
+                        <div class="card-content">
+                            <div (click)="navigate('home/about', product.productId)">
+                                <h3 class="card-title"><b>{{product.name}}</b></h3>
+                                <p class="card-description">{{product.title}}</p>
+                                <p class="card-price"><b>${{product.price}}</b></p>
                             </div>
-                            <div class="card-content">
-                                <h3 class="card-title">{{product.name}}</h3>
-                                <!-- <p class="card-description">{{product.description}}</p> -->
-                                <p class="card-price">${{product.price}}</p>
-                                <button class="card-button">Add to Cart</button>
+                            <div class="card-footer">
+                                <span><mat-icon (click)="product.favourite = !product.favourite">{{product.favourite ?
+                                        'favorite' : 'favorite_border'}}</mat-icon></span>
                             </div>
                         </div>
-                    </li>
-                } @empty {
-                    <img src="../../../../assets/images/not-found.png">
+                    </div>
+                </li>
                 }
-                </ul>
-            
+            </ul>
         </div>
     </div>
+    } @else {
+    <div class="not-found-footer">
+        <div class="not-found">
+            <img src="../../../../assets/images/not-found.png">
+        </div>
+        <div class="go-back" (click)="goBackToProducts()"><a>Go back to home</a></div>
+    </div>
+    }
 </div>
