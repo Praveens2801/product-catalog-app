@@ -54,7 +54,8 @@
                   "maximumError": "150kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "https://praveens2801.github.io/product-catalog-app/"
             },
             "development": {
               "optimization": false,
