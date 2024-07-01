@@ -6,7 +6,7 @@ import { ProductCategory, ProductType } from '../entities/enums/product';
 export class ProductServiceService {
   products: IProducts[] = [
     {
-      imgUrl: "../assets/images/1.jpg",
+      imgUrl: "assets/images/1.jpg",
       name: "Samsung",
       price: 20000,
       category: ProductCategory.Electronics,
@@ -17,7 +17,7 @@ export class ProductServiceService {
       description: "A smartphone with all the latest features."
     },
     {
-      imgUrl: "../assets/images/2.jpg",
+      imgUrl: "assets/images/2.jpg",
       name: "Samsung",
       price: 28999,
       category: ProductCategory.Electronics,
@@ -28,7 +28,7 @@ export class ProductServiceService {
       description: "Premium smartphone with advanced camera and performance."
     },
     {
-      imgUrl: "../assets/images/3.jpg",
+      imgUrl: "assets/images/3.jpg",
       name: "Samsung",
       price: 25699,
       category: ProductCategory.Electronics,
@@ -39,7 +39,7 @@ export class ProductServiceService {
       description: "Affordable smartphone with essential features."
     },
     {
-      imgUrl: "../assets/images/4.jpg",
+      imgUrl: "assets/images/4.jpg",
       name: "Samsung",
       price: 14550,
       category: ProductCategory.Electronics,
@@ -50,7 +50,7 @@ export class ProductServiceService {
       description: "Flagship smartphone with top-notch specifications."
     },
     {
-      imgUrl: "../assets/images/5.jpg",
+      imgUrl: "assets/images/5.jpg",
       name: "Samsung",
       price: 12399,
       category: ProductCategory.Electronics,
@@ -61,7 +61,7 @@ export class ProductServiceService {
       description: "Balanced smartphone with good performance and features."
     },
     {
-      imgUrl: "../assets/images/6.jpg",
+      imgUrl: "assets/images/6.jpg",
       name: "HP",
       price: 38990,
       category: ProductCategory.Electronics,
@@ -72,7 +72,7 @@ export class ProductServiceService {
       description: "Ultra premium smartphone with cutting-edge technology."
     },
     {
-      imgUrl: "../assets/images/7.jpg",
+      imgUrl: "assets/images/7.jpg",
       name: "Lenovo",
       price: 18999,
       category: ProductCategory.Electronics,
@@ -83,7 +83,7 @@ export class ProductServiceService {
       description: "Compact smartphone for easy handling and portability."
     },
     {
-      imgUrl: "../assets/images/8.jpg",
+      imgUrl: "assets/images/8.jpg",
       name: "Dell",
       price: 36560,
       category: ProductCategory.Electronics,
@@ -94,7 +94,7 @@ export class ProductServiceService {
       description: "Sleek and stylish smartphone with a modern design."
     },
     {
-      imgUrl: "../assets/images/9.jpg",
+      imgUrl: "assets/images/9.jpg",
       name: "Hp",
       price: 20999,
       category: ProductCategory.Electronics,
@@ -105,7 +105,7 @@ export class ProductServiceService {
       description: "Compact smartphone for easy handling and portability."
     },
     {
-      imgUrl: "../assets/images/10.jpg",
+      imgUrl: "assets/images/10.jpg",
       name: "Ultimus",
       price: 16599,
       category: ProductCategory.Electronics,
@@ -116,7 +116,7 @@ export class ProductServiceService {
       description: "Sleek and stylish smartphone with a modern design."
     },
     {
-      imgUrl: "../assets/images/11.jpg",
+      imgUrl: "assets/images/11.jpg",
       name: "Fossil",
       price: 7497,
       category: ProductCategory.Fashion,
@@ -127,7 +127,7 @@ export class ProductServiceService {
       description: "A smartphone with all the latest features."
     },
     {
-      imgUrl: "../assets/images/12.jpg",
+      imgUrl: "assets/images/12.jpg",
       name: "Armani Exchange",
       price: 17495,
       category: ProductCategory.Fashion,
@@ -138,7 +138,7 @@ export class ProductServiceService {
       description: "Premium smartphone with advanced camera and performance."
     },
     {
-      imgUrl: "../assets/images/13.jpg",
+      imgUrl: "assets/images/13.jpg",
       name: "Casio",
       price: 2795,
       category: ProductCategory.Fashion,
@@ -149,7 +149,7 @@ export class ProductServiceService {
       description: "Affordable smartphone with essential features."
     },
     {
-      imgUrl: "../assets/images/14.jpg",
+      imgUrl: "assets/images/14.jpg",
       name: "Fossil",
       price: 13495,
       category: ProductCategory.Fashion,
@@ -160,7 +160,7 @@ export class ProductServiceService {
       description: "Flagship smartphone with top-notch specifications."
     },
     {
-      imgUrl: "../assets/images/15.jpg",
+      imgUrl: "assets/images/15.jpg",
       name: "Titan",
       price: 2500,
       category: ProductCategory.Fashion,
@@ -171,7 +171,7 @@ export class ProductServiceService {
       description: "Balanced smartphone with good performance and features."
     },
     {
-      imgUrl: "../assets/images/16.jpg",
+      imgUrl: "assets/images/16.jpg",
       name: "Nike",
       price: 1099.99,
       category: ProductCategory.Footwear,
@@ -182,7 +182,7 @@ export class ProductServiceService {
       description: "Ultra premium smartphone with cutting-edge technology."
     },
     {
-      imgUrl: "../assets/images/17.jpg",
+      imgUrl: "assets/images/17.jpg",
       name: "Nike",
       price: 5400,
       category: ProductCategory.Footwear,
@@ -193,7 +193,7 @@ export class ProductServiceService {
       description: "Compact smartphone for easy handling and portability."
     },
     {
-      imgUrl: "../assets/images/18.jpg",
+      imgUrl: "assets/images/18.jpg",
       name: "Nike",
       price: 6990,
       category: ProductCategory.Footwear,
@@ -204,7 +204,7 @@ export class ProductServiceService {
       description: "Sleek and stylish smartphone with a modern design."
     },
     {
-      imgUrl: "../assets/images/19.jpg",
+      imgUrl: "assets/images/19.jpg",
       name: "Ascis",
       price: 7495,
       category: ProductCategory.Footwear,
@@ -215,7 +215,7 @@ export class ProductServiceService {
       description: "Compact smartphone for easy handling and portability."
     },
     {
-      imgUrl: "../assets/images/20.jpg",
+      imgUrl: "assets/images/20.jpg",
       name: "Van Heusen",
       price: 3009,
       category: ProductCategory.Footwear,
