@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
 
 @Component({
@@ -12,4 +12,5 @@ import { LayoutModule } from './layout/layout.module';
 })
 export class AppComponent {
   title = 'product-catalog-app';
+  constructor(public router: Router) {}
 }

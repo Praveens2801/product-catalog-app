@@ -1,5 +1,12 @@
+@if(router.url.includes('auth/login') || router.url.includes('auth/forgot-password') ||
+router.url.includes('auth/register')) {
+<div>
+  <router-outlet></router-outlet>
+</div>
+} @else {
 <app-header></app-header>
 <div>
   <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>
+}
