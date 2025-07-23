@@ -1,1 +1,87 @@
-<p>register works!</p>
+<section class="sign-wrapper">
+    <div class="sign-image">
+        <div class="overlay"></div>
+    </div>
+    <div class="sign-form">
+        <h2>Sign In</h2>
+        <!-- <form [formGroup]="registerationForm" (ngSubmit)="onSignUp()">
+            <input formControlName="userName" type="text" placeholder="User Name" />
+            <input formControlName="email" type="email" placeholder="Email address" />
+            <input formControlName="fullName" type="text" placeholder="Full Name" />
+            <input formControlName="password" type="password" placeholder="Password" />
+            <input formControlName="confirmPassword" type="password" placeholder="Confirm Password" />
+            @if(passwordMismatchError) {
+            <small data-cy="passwordNotMatchError" class="error-text">
+                password and confirmpassword should match
+            </small>
+            }
+            <button type="submit" class="submit-btn" [disabled]="registerationForm.invalid">Sign Up</button>
+        </form> -->
+        <form [formGroup]="registerationForm" (ngSubmit)="onSignUp()">
+            <!-- User Name -->
+            <input formControlName="userName" type="text" placeholder="User Name" />
+            <small
+                *ngIf="registerationForm.get('userName')?.touched && registerationForm.get('userName')?.hasError('required')"
+                class="error-text">
+                User Name is required
+            </small>
+            <small
+                *ngIf="registerationForm.get('userName')?.touched && registerationForm.get('userName')?.hasError('minlength')"
+                class="error-text">
+                User Name must be at least 3 characters
+            </small>
+
+            <!-- Email -->
+            <input formControlName="email" type="email" placeholder="Email address" />
+            <small
+                *ngIf="registerationForm.get('email')?.touched && registerationForm.get('email')?.hasError('required')"
+                class="error-text">
+                Email is required
+            </small>
+            <small *ngIf="registerationForm.get('email')?.touched && registerationForm.get('email')?.hasError('email')"
+                class="error-text">
+                Invalid email format
+            </small>
+
+            <!-- Full Name -->
+            <input formControlName="fullName" type="text" placeholder="Full Name" />
+            <small
+                *ngIf="registerationForm.get('fullName')?.touched && registerationForm.get('fullName')?.hasError('required')"
+                class="error-text">
+                Full Name is required
+            </small>
+            <small
+                *ngIf="registerationForm.get('fullName')?.touched && registerationForm.get('fullName')?.hasError('minlength')"
+                class="error-text">
+                Full Name must be at least 3 characters
+            </small>
+
+            <!-- Password -->
+            <input formControlName="password" type="password" placeholder="Password" />
+            <small
+                *ngIf="registerationForm.get('password')?.touched && registerationForm.get('password')?.hasError('required')"
+                class="error-text">
+                Password is required
+            </small>
+
+            <!-- Confirm Password -->
+            <input formControlName="confirmPassword" type="password" placeholder="Confirm Password" />
+            <small
+                *ngIf="registerationForm.get('confirmPassword')?.touched && registerationForm.get('confirmPassword')?.hasError('required')"
+                class="error-text">
+                Confirm Password is required
+            </small>
+            <small *ngIf="registerationForm.hasError('MustMatch') && registerationForm.get('confirmPassword')?.touched"
+                class="error-text">
+                Password and Confirm Password must match
+            </small>
+
+            <!-- Submit Button -->
+            <button type="submit" class="submit-btn" [disabled]="registerationForm.invalid">Sign Up</button>
+        </form>
+
+        <div class="signin">
+            Already a customer? <u><a [routerLink]="['/home/auth/login']">Sign In →</a></u>
+        </div>
+    </div>
+</section>

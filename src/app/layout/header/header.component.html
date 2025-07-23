@@ -1,11 +1,84 @@
-<nav class="navbar">
-    <div class="navbar-container">
-      <div class="navbar-brand">
-        <a (click)="navigate('home/products')"><i class="material-icons">shopping_cart</i>My Shop</a>
-      </div>
-      <ul class="navbar-nav">
-        <li class="nav-user-name"><a>Hi, Praveen</a></li>
-        <li class="nav-item"><a><i class="material-icons">shopping_cart</i></a></li>
+<nav class="custom-right-shadow p-3 mb-5 rounded">
+  <div class="wrapper">
+    <div class="logo"><a href="/">ShopEase</a></div>
+
+    <ul class="nav-links">
+      <label for="close-btn" class="btn close-btn"><i class="bi bi-x-lg"></i></label>
+
+      <li>
+        <a class="desktop-item">Categories</a>
+        <label for="showDrop" class="mobile-item">Categories</label>
+        <ul class="drop-menu">
+          <li><a>Men's Fashion</a></li>
+          <li><a>Women's Fashion</a></li>
+          <li><a>Electronics</a></li>
+          <li><a>Home Appliances</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a class="desktop-item">Deals</a>
+        <label for="showMega" class="mobile-item">Deals</label>
+        <div class="mega-box">
+          <div class="content">
+            <div class="row">
+              <img
+                src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg"
+                alt="Promo">
+            </div>
+            <div class="row">
+              <header>Top Offers</header>
+              <ul class="mega-links">
+                <li><a>50% Off Shoes</a></li>
+                <li><a>Buy 1 Get 1 Free</a></li>
+                <li><a>New User Offers</a></li>
+                <li><a>Mobile Deals</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>Brands</header>
+              <ul class="mega-links">
+                <li><a>Nike</a></li>
+                <li><a>Apple</a></li>
+                <li><a>Samsung</a></li>
+                <li><a>Puma</a></li>
+              </ul>
+            </div>
+            <div class="row">
+              <header>Services</header>
+              <ul class="mega-links">
+                <li><a>Customer Support</a></li>
+                <li><a>Return Policy</a></li>
+                <li><a>Track Order</a></li>
+                <li><a>FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <ul class="nav-links search-container">
+      <li class="search-input">
+        <input type="text" id="search" [(ngModel)]="searchTerm" class="search-box" placeholder="Search...">
+      </li>
+    </ul>
+    <div class="d-flex justify-content-between align-items-center gap-4">
+      <ul class="nav-links">
+        <li>
+          <a class="desktop-item">Hi {{user?.fullName}}!</a>
+          <ul class="drop-menu">
+            <li><a><i class="bi bi-person"></i> My Profile</a></li>
+            <li><a><i class="bi bi-bag"></i> My Orders</a></li>
+            <li><a><i class="bi bi-heart"></i> Wishlist</a></li>
+            <li><a (click)="logout()"><i class="bi bi-box-arrow-right"></i> Logout</a></li>
+          </ul>
+        </li>
       </ul>
+
+      <div class="logo">
+        <a><i class="bi bi-cart3"></i></a>
+      </div>
     </div>
-  </nav>
+  </div>
+</nav>

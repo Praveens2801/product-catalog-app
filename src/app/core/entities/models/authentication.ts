@@ -20,3 +20,14 @@ export interface IUser {
   userId: number;
   userName: string;
 }
+
+export interface IUserRegisteration {
+  userId: number,
+  organizationId: number,
+  userName: string,
+  password: string,
+  confirmPassword: string,
+  fullName: string,
+  email: string,
+  createdOn: string
+}

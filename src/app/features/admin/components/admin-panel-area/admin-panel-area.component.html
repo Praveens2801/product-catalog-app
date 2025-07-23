@@ -1,1 +1,98 @@
-<p>admin-panel-area works!</p>
+<!-- dashboard.component.html -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 d-none d-md-block bg-dark sidebar text-white">
+      <div class="sidebar-sticky">
+        <h4 class="pt-3 text-center">CodingLab</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item" *ngFor="let item of navItems">
+            <a class="nav-link text-white" [routerLink]="item.link">
+              <mat-icon>{{ item.icon }}</mat-icon> {{ item.name }}
+            </a>
+          </li>
+        </ul>
+        <div class="mt-5 text-center">
+          <a class="btn btn-outline-light btn-sm" routerLink="/logout">Log out</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2">Dashboard</h1>
+        <div class="input-group w-25">
+          <input type="text" class="form-control" placeholder="Search...">
+          <div class="input-group-append">
+            <button class="btn btn-primary"><mat-icon>search</mat-icon></button>
+          </div>
+        </div>
+        <div>
+          <img src="https://via.placeholder.com/40" alt="Avatar" class="rounded-circle">
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="row mb-4">
+        <div class="col-md-3" *ngFor="let card of statsCards">
+          <mat-card>
+            <mat-card-title>{{ card.title }}</mat-card-title>
+            <mat-card-content>
+              <h3>{{ card.value }}</h3>
+              <small class="text-success" *ngIf="card.trend === 'up'">▲ Up from yesterday</small>
+              <small class="text-danger" *ngIf="card.trend === 'down'">▼ Down from today</small>
+              <mat-icon class="float-right">{{ card.icon }}</mat-icon>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+      <!-- Recent Sales & Top Products -->
+      <div class="row">
+        <!-- Recent Sales -->
+        <div class="col-md-8">
+          <mat-card>
+            <mat-card-title>Recent Sales</mat-card-title>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Sales</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let sale of recentSales">
+                    <td>{{ sale.date }}</td>
+                    <td>{{ sale.customer }}</td>
+                    <td>{{ sale.status }}</td>
+                    <td>\${{ sale.amount }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </mat-card>
+        </div>
+
+        <!-- Top Products -->
+        <div class="col-md-4">
+          <mat-card>
+            <mat-card-title>Top Selling Product</mat-card-title>
+            <mat-list>
+              <mat-list-item *ngFor="let product of topProducts">
+                <img matListAvatar [src]="product.image" alt="product">
+                <h4 matLine>{{ product.name }}</h4>
+                <p matLine class="text-right font-weight-bold">
+                  \${{ product.price }}
+                </p>
+              </mat-list-item>
+            </mat-list>
+          </mat-card>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

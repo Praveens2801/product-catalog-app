@@ -31,6 +31,8 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/styles.scss"
             ],
             "scripts": [],
@@ -54,8 +56,7 @@
                   "maximumError": "150kb"
                 }
               ],
-              "outputHashing": "all",             
-
+              "outputHashing": "all",
               "baseHref": "https://product-catalog-c5e29.web.app"
             },
             "development": {
@@ -99,6 +100,7 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -111,4 +113,3 @@
     }
   }
 }
-

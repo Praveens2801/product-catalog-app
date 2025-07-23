@@ -18,7 +18,7 @@ export class ProductsAreaComponent {
 
 
   /* strings */
-  searchTerm: string = '';
+  
   selectedCategory: string = '';
 
   /* object */
@@ -51,11 +51,7 @@ export class ProductsAreaComponent {
       })
     })
     return arrayList;
-  }
-
-  searchProduct(searchTerm: string): void {
-    this.filteredProductsData = structuredClone(this.products).filter(product => product.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()));
-  }
+  } 
 
   filterProducts(): void {
     if (this.selectedCategory === 'All' || !this.selectedCategory) {
@@ -67,7 +63,6 @@ export class ProductsAreaComponent {
 
   goBackToProducts(): void {
     this.filterProducts();
-    this.searchTerm = '';
   }
 
   sortProducts(priceSortOrder: PriceSortOrder): void {

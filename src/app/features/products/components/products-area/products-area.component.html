@@ -1,11 +1,4 @@
-<div class="products-area">
-    <div class="search-container">
-        <input type="text" id="search" [(ngModel)]="searchTerm" class="search-box" placeholder="Search...">
-        <button [disabled]="searchTerm ? false : true" class="filter-button" mat-icon-button aria-label="Filter"
-            (click)="searchProduct(searchTerm)">
-            <mat-icon>search</mat-icon>
-        </button>
-    </div>
+<div class="products-area">    
     @if (filteredProductsData.length > 0) {
     <div class="products">
         <div class="product-header">
